@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Iniciar Sesión</title>
+        <h:outputStylesheet library="css" name="estilos.css"/>
+    </h:head>
+
+    <h:body>
+        <header>
+            <h1>Inicio de sesión</h1>
+        </header>
+
+        <div class="section" style="width:400px; text-align:center;">
+            <h:form>
+                <p:inputText id="usuario" value="#{loginBean.usuario}" placeholder="Usuario" style="width:100%;"/>
+                <p:password id="contrasena" value="#{loginBean.contrasena}" placeholder="Contraseña" style="width:100%; margin-top:10px;"/>
+                <p:commandButton value="Entrar" action="#{loginBean.login}" styleClass="p-button-success" icon="pi pi-sign-in" style="margin-top:15px;"/>
+                <br/>
+                <h:link outcome="registro.xhtml" value="¿No tienes cuenta? Regístrate aquí" 
+                        style="display:block; margin-top:20px;"/>
+
+            </h:form>
+        </div>
+    </h:body>
+</html>

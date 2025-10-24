@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Logros del Alumno</title>
+    <h:outputStylesheet library="css" name="estilos.css"/>
+</h:head>
+
+<h:body>
+    <header>
+        <h1>Logros del Alumno</h1>
+    </header>
+
+    <nav>
+        <h:link outcome="index.xhtml" value="Inicio"/>
+        <h:link outcome="logros.xhtml" value="Logros"/>
+        <h:link outcome="contacto.xhtml" value="Contacto"/>
+    </nav>
+
+    <div class="section">
+        <h2>Mis logros</h2>
+        <p>Estos son algunos de los logros que he obtenido:</p>
+
+        <!-- Ejemplo con tabla de logros -->
+        <p:dataTable value="#{logrosBean.logros}" var="logro" style="margin-top:20px; width:100%">
+            <p:column headerText="Curso / Actividad">
+                #{logro.nombre}
+            </p:column>
+            <p:column headerText="Descripción">
+                #{logro.descripcion}
+            </p:column>
+            <p:column headerText="Fecha">
+                #{logro.fecha}
+            </p:column>
+        </p:dataTable>
+    </div>
+</h:body>
+</html>
+
+
+
